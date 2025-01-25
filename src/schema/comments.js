@@ -10,7 +10,7 @@ const commentsSchema = new mongoose.Schema({
         ref:'User',
         required: true
     },
-    postid:{
+    postid:{ 
         type:String,
         required: true
 
@@ -18,7 +18,6 @@ const commentsSchema = new mongoose.Schema({
     data: {
         type: String,
         required: true,
-        default: "bando"
     }
 
 },{timestamps: true})

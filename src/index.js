@@ -5,11 +5,6 @@ import { getBathroom } from "./controllers/getBathroom.js";
 import { jagan } from "./controllers/getJagan.js";
 import apiRouter from "./routes/apiRouter.js";
 import { isAuthenticated } from "./middleware/authMiddleware.js";
-import { swaggerOptions } from "./utils/swaggerOptions.js";
-import swaggerUi from "swagger-ui-express";
-import swaggerJSDoc from "swagger-jsdoc";
-import swaggerJagan from "../jagan.json" assert {type: 'json'};
-
 
 const app = express();
 
@@ -19,8 +14,6 @@ app.use(express.json())
 // app.use(express.text())
 app.use(express.urlencoded({ extended: true }));
 
-// const swaggerDocs = swaggerJSDoc(swaggerOptions)
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerJagan));
 
 app.get("/", (req, res) => {
   res.send("home");
